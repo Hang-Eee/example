@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>네이게이션 예제</title>
+  <style>
+    /*노말라이즈(초기화)*/
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /*ul테그속성 목록 점 삭제*/
+    ul {
+      list-style: none;
+    }
+
+    /*a테그속성 파란글씨,밑줄 삭제*/
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /*nav(생략 가능)*/
+    nav {
+      width: 100%;
+    }
+    /*내비랑 띄어쓰기 왜적는거냐?*/
+    nav .container{
+      width: 1200px;
+      margin:0 auto;/*블럭요소 가운데 정렬*/
+    }
+
+    nav .top-menu {
+      width: 100%;/*(생략가능)*/
+      min-width: 1200px;/*1200px 이하로 줄어들지 않음*/
+      background-color: #666;
+    }
+
+    
+    /*clearfix hack*/
+    .clear::after{/*가상요소*/
+      content: "";/*내용이 없는 빈요소를 만듬*/
+      display: block;
+      clear: both;
+    }
+    
+    .top-menu ul {
+      float: right;
+    }
+
+    .top-menu li{
+      float: left;/*display:inline-block로 대체 가능*/
+      color: #fff;
+      padding: 10px 40px 10px 0;
+      font-size: 18px;
+    }
+
+    nav .bottom-menu{
+      width: 100%;/*(생략가능)*/
+      min-width: 1200px;/*1200px 이하로 줄어들지 않음*/
+      background-color:orange
+    }
+
+    .bottom-menu .logo{
+      font-size: 20px;
+      color: #fff;
+      float: left;
+      margin-left: 40px;
+      line-height: 80px;
+    }
+
+    .bottom-menu .gnb{
+      float: right;
+      margin-right: 40px;
+    }
+    .gnb > li {
+      margin-left: 45px;
+      float: left;
+      line-height: 80px;
+      color: #fff;
+      font-size: 18px;
+    }
+    </style>
+</head>
+
+<body>
+  <nav>
+    <div class="top-menu">
+      <div class="container clear">
+        <ul class="login clear">
+          <li><a href="#">login</a></li>
+          <li><a href="#">join us</a></li>
+          <li><a href="#">member</a></li>
+        </ul>
+        <!-- <div style="clear: both;"></div> -->
+      </div>
+    </div>
+
+    <div class="bottom-menu">
+      <div class="container clear">
+        <div class="logo">
+          <a href="#">SHAMMAH</a>
+        </div>
+        <ul class="gnb">
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">NEWS</a></li>
+          <li><a href="#">PORTFOLIO</a></li>
+          <li><a href="#">BOARD</a></li>
+          <li><a href="#">ALBUM</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</body>
+
+</html>
